@@ -1,0 +1,10 @@
+.navbar {
+    background-color: #0c7064;
+}
+
+.container a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}

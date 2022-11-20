@@ -1,0 +1,32 @@
+<div class="container my-5 d-flex justify-content-evenly">
+
+    <div class="py-1 px-5 bg-verde rounded-5 shadow">
+
+            <table class="table table-hover align-middle table-borderless rounded-4 m-4 text-center text-uppercase text-white fw-bold">
+                <thead>
+                    <tr>
+                        <th># Mesa</th>
+                        <th># CC Inscritas</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Dato</td>
+                        <td>Dato</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm me-2 text-uppercase text-white fw-bold" (click)="editar()">Editar</button>
+                            <button class="btn btn-danger btn-sm text-uppercase text-white fw-bold" (click)="eliminar()">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
+
+    <div class="p-4 d-flex align-items-center">
+        <button type="button" class="btn btn-success bg-verde text-white text-uppercase fw-bold" (click)="nuevo()">Nuevo</button>
+    </div>
+
+</div>
