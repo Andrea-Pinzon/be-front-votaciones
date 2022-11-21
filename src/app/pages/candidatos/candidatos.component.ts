@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-candidatos',
@@ -10,16 +11,19 @@ export class CandidatosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // this.listar();
   }
 
-  editar(){
-
+  agregar():void{
+    console.log("agregando nuevo");
   }
+
+  editar():void{
+    // console.log("editando a "+id);
+  }
+
   eliminar(){
 
   }
 
-  nuevo(){
-
-  }
 }
