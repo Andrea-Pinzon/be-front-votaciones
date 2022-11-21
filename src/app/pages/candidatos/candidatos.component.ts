@@ -23,11 +23,11 @@ export class CandidatosComponent implements OnInit {
   }
 
   agregar():void{
-    this.router.navigate(['/dashboard/crear']);
+    // this.router.navigate(['/dashboard/crear']);
   }
 
   editar(id: string):void{
-    this.router.navigate(['/dashboard/actualizar/' +id]);
+    // this.router.navigate(['/dashboard/actualizar/' +id]);
   }
 
   eliminar(id:string):void{
