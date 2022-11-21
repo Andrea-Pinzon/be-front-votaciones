@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_gateway: "URL"
+  url_gateway: "http://127.0.0.1:777"
 };
 
 /*

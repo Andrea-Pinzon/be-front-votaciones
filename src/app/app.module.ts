@@ -14,6 +14,9 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptores/token.interceptor';
+
 //aqui estamos importando las rutas desde dentro de pages para que las pueda usar el menu y el encabezado.
 const appRoutes: Routes=[
   {path:'', component: HomeComponent},
@@ -45,7 +48,11 @@ const appRoutes: Routes=[
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

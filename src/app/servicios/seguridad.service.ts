@@ -13,6 +13,7 @@ export class SeguridadService {
  elUsuario = new BehaviorSubject<Usuario>(new Usuario);
  constructor(private http: HttpClient,private router: Router) {
    this.verificarSesionActual();
+   console.log('entramos al constructor');
   }
 
  /**
@@ -80,6 +81,7 @@ public get usuarioSesionActiva(): Usuario {
  let sesionActual = this.getDatosSesion();
  if (sesionActual) {
  this.setUsuario(JSON.parse(sesionActual));
+ console.log('entramos verificarsesion');
  }
  }
  /**

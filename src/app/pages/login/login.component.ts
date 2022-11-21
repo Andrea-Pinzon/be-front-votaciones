@@ -13,40 +13,45 @@ import { SeguridadService } from '../../servicios/seguridad.service';
 export class LoginComponent implements OnInit {
  correo: string = "";
  contrasena: string = "";
+
  constructor(private miServicioSeguridad: SeguridadService,
    private router: Router) { }
  /**
 * Método que se ejecuta una vez se carga la página
 */
  ngOnInit(): void {
+  console.log('entramos');
  }
  /**
  * Este método permite llevar a cabo el proceso de login,
  * llamando al método correspondiente de los servicios
  * para solicitar la validación al backend
  */
- login(): void {
-   console.log("aqui" + this.correo + " contraseña " + this.contrasena)
-   let elUsuario: Usuario = {
-     correo: this.correo,
-     contrasena: this.contrasena
-   }
-   this.miServicioSeguridad.login(elUsuario)
-   .subscribe({
-     next:(data) => {
-       this.router.navigate(['/']);
-       this.miServicioSeguridad.guardarDatosSesion(data);
-     },
-     error:(error) => {
-       Swal.fire({
-         title: 'Error Login',
-         text: error["error"]["message"],
-         icon: 'error',
-         timer: 5000
-       });
-     }
+login(){
+  console.log('el login');
+}
+//  login(): void {
+//    console.log("aqui" + this.correo + " contraseña " + this.contrasena)
+//    let elUsuario: Usuario = {
+//      correo: this.correo,
+//      contrasena: this.contrasena
+//    }
+//    this.miServicioSeguridad.login(elUsuario)
+//    .subscribe({
+//      next:(data) => {
+//        this.router.navigate(['/']);
+//        this.miServicioSeguridad.guardarDatosSesion(data);
+//      },
+//      error:(error) => {
+//        Swal.fire({
+//          title: 'Error Login',
+//          text: error["error"]["message"],
+//          icon: 'error',
+//          timer: 5000
+//        });
+//      }
 
-    });
- }
+//     });
+//  }
 }
 
