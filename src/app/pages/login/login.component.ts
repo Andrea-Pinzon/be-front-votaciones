@@ -27,31 +27,29 @@ export class LoginComponent implements OnInit {
  * llamando al método correspondiente de los servicios
  * para solicitar la validación al backend
  */
-login(){
-  console.log('el login');
-}
-//  login(): void {
-//    console.log("aqui" + this.correo + " contraseña " + this.contrasena)
-//    let elUsuario: Usuario = {
-//      correo: this.correo,
-//      contrasena: this.contrasena
-//    }
-//    this.miServicioSeguridad.login(elUsuario)
-//    .subscribe({
-//      next:(data) => {
-//        this.router.navigate(['/']);
-//        this.miServicioSeguridad.guardarDatosSesion(data);
-//      },
-//      error:(error) => {
-//        Swal.fire({
-//          title: 'Error Login',
-//          text: error["error"]["message"],
-//          icon: 'error',
-//          timer: 5000
-//        });
-//      }
 
-//     });
-//  }
+ login(): void {
+   console.log("aqui" + this.correo + " contraseña " + this.contrasena)
+   let elUsuario: Usuario = {
+     correo: this.correo,
+     contrasena: this.contrasena
+   }
+   this.miServicioSeguridad.login(elUsuario)
+   .subscribe({
+     next:(data) => {
+       this.router.navigate(['/']);
+       this.miServicioSeguridad.guardarDatosSesion(data);
+     },
+     error:(error) => {
+       Swal.fire({
+         title: 'Error Login',
+         text: error["error"]["message"],
+         icon: 'error',
+         timer: 5000
+       });
+     }
+
+    });
+ }
 }
 
