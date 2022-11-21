@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_gateway: "URL"
+  url_gateway: "URL"
 };
 
 /*
