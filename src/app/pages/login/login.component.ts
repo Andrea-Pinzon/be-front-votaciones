@@ -5,7 +5,7 @@ import { Usuario } from '../../modelos/usuario.model';
 import { SeguridadService } from '../../servicios/seguridad.service';
 
 @Component({
- selector: 'ngx-login',
+ selector: 'app-login',
  templateUrl: './login.component.html',
  styleUrls: ['./login.component.scss']
 })
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
          timer: 5000
        });
      }
-     
+
     });
  }
 }
