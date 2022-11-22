@@ -30,7 +30,7 @@ public get usuarioSesionActiva(): Usuario {
  * @param user información del usuario logueado
  */
  setUsuario(user: Usuario) {
- this.elUsuario.next(user);
+  this.elUsuario.next(user);
  }
  /**
  * Permite obtener la información del usuario
@@ -38,7 +38,7 @@ public get usuarioSesionActiva(): Usuario {
  * @returns
  */
  getUsuario() {
- return this.elUsuario.asObservable();
+  return this.elUsuario.asObservable();
  }
  /**
  * Realiza la petición al backend con el correo y la contraseña
@@ -47,7 +47,7 @@ public get usuarioSesionActiva(): Usuario {
  * @returns Respuesta HTTP la cual indica si el usuario tiene permiso de acceso
  */
  login(infoUsuario: Usuario): Observable<Usuario> {
- return this.http.post<Usuario>(`${environment.url_gateway}/login`, infoUsuario);
+  return this.http.post<Usuario>(`${environment.url_gateway}/login`, infoUsuario);
  }
  /**
  * Guarda los datos tales como el identificador
@@ -58,9 +58,9 @@ public get usuarioSesionActiva(): Usuario {
  * fue almacenada correctamente
  */
  guardarDatosSesion(datosSesion: any) {let sesionActual = localStorage.getItem('sesion');
- let data: Usuario = {
- _id: datosSesion.user_id,
- token:datosSesion.token,
+  let data: Usuario = {
+    _id: datosSesion.user_id,
+    token:datosSesion.token,
  };
  localStorage.setItem('sesion', JSON.stringify(data));
  this.setUsuario(data);
@@ -71,7 +71,7 @@ public get usuarioSesionActiva(): Usuario {
  */
  logout() {
  localStorage.removeItem('sesion');
- this.setUsuario(new Usuario());
+  this.setUsuario(new Usuario());
  }
  /**
  * Permite verificar si actualmente en el local storage
@@ -79,18 +79,18 @@ public get usuarioSesionActiva(): Usuario {
  */
  verificarSesionActual() {
  let sesionActual = this.getDatosSesion();
- if (sesionActual) {
- this.setUsuario(JSON.parse(sesionActual));
- console.log('entramos verificarsesion');
+  if (sesionActual) {
+    this.setUsuario(JSON.parse(sesionActual));
+    console.log('entramos verificarsesion');
  }
- }
+}
  /**
  * Verifica si hay una sesion activa
  * @returns
  */
  sesionExiste(): boolean {
  let sesionActual = this.getDatosSesion();
- return (sesionActual) ? true : false;
+  return (sesionActual) ? true : false;
  }
  /**
  * Permite obtener los dato de la sesión activa en el
@@ -99,6 +99,6 @@ public get usuarioSesionActiva(): Usuario {
  */
  getDatosSesion() {
  let sesionActual = localStorage.getItem('sesion');
- return sesionActual;
+  return sesionActual;
  }
 }

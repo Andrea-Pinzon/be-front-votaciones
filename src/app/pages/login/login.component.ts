@@ -14,13 +14,14 @@ export class LoginComponent implements OnInit {
  correo: string = "";
  contrasena: string = "";
 
- constructor(private miServicioSeguridad: SeguridadService,
-   private router: Router) { }
+constructor(private miServicioSeguridad: SeguridadService,
+              private router: Router) { }
+// constructor(private router: Router,private miServicioSeguridad: SeguridadService) { }
  /**
 * Método que se ejecuta una vez se carga la página
 */
  ngOnInit(): void {
-  console.log('entramos');
+
  }
  /**
  * Este método permite llevar a cabo el proceso de login,
