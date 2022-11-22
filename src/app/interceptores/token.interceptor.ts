@@ -9,7 +9,6 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { SeguridadService } from '../servicios/seguridad.service';
-import Swal from 'sweetalert2';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
@@ -21,14 +20,14 @@ Observable<HttpEvent<any>> {
     if (this.miServicioSeguridad.usuarioSesionActiva) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer${this.miServicioSeguridad.usuarioSesionActiva.token}`
+          Authorization: `Bearer ${this.miServicioSeguridad.usuarioSesionActiva.token}`
         }
       });
     }
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {
-          this.router.navigateByUrl('/pages/dashboard');
+          this.router.navigateByUrl('/');
         }
         return throwError(err);
       })

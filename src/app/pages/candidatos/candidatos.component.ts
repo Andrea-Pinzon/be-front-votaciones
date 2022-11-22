@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 export class CandidatosComponent implements OnInit {
   candidato : any;
   nombresColumnas: string[] = ['#Resolucion','Cedula','Nombre','Apellido'];
+
   constructor(private miServicioCandidatos: CandidatosService) { }
 
   ngOnInit(): void {
