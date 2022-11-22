@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MesasService } from 'src/app/servicios/mesas.service';
 import Swal from 'sweetalert2';
 
@@ -11,7 +12,7 @@ export class MesasComponent implements OnInit {
   mesas : any;
   nombresColumnas: string[] = ['Mesas','Cedulas inscritas'];
 
-  constructor(private miServicioMesas: MesasService) { }
+  constructor(private miServicioMesas: MesasService, private router: Router) { }
 
   ngOnInit(): void {
     this.listar();
@@ -24,11 +25,11 @@ export class MesasComponent implements OnInit {
   }
 
   agregar():void{
-    // this.router.navigate(['/dashboard/crear']);
+    this.router.navigate(['/dashboard/crear']);
   }
 
   editar(id: string):void{
-    // this.router.navigate(['/dashboard/actualizar/' +id]);
+    this.router.navigate(['/dashboard/actualizar/' +id]);
   }
 
 
